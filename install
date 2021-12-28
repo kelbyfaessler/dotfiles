@@ -14,7 +14,8 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh
 ln -s ~/.dotfiles/zsh/.zshrc ~/.zshrc
 
 # fzf (can be used with zsh, tmux, nvim. I currently use with zsh)
-git clone git clone https://github.com/junegunn/fzf --depth 1 ~/.config/fzf
+#mkdir ~/.config/fzf
+git clone --depth=1 https://github.com/junegunn/fzf ~/.config/fzf
 cd ~/.config/fzf
 ./install --no-update-rc --no-bash --no-fish
 

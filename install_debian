@@ -1,0 +1,5 @@
+if ! zsh --version; then
+    sudo apt update
+    sudo apt -y upgrade
+    sudo apt -y install zsh
+fi
