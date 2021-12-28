@@ -11,6 +11,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/zsh-aut
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/zsh-syntax-highlighting
 
+ln -s ~/.dotfiles/zsh/.zshrc ~/.zshrc
+
 # fzf (can be used with zsh, tmux, nvim. I currently use with zsh)
 git clone git clone https://github.com/junegunn/fzf --depth 1 ~/.config/fzf
 cd ~/.config/fzf
