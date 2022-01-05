@@ -2,6 +2,7 @@
 
 # vim:
 ln -s ~/.dotfiles/init.vim ~/.config/nvim
+pip3 install pynvim
 
 # zsh:
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/powerlevel10k
