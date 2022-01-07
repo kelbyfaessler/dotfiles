@@ -64,10 +64,10 @@ vnoremap <leader>P "+P
 
 " NERDTree
 "nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <leader>n :NERDTreeToggle<CR>
-nnoremap <C-n> :NERDTreeFind<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+"nnoremap <leader>n :NERDTreeToggle<CR>
+"nnoremap <C-n> :NERDTreeFind<CR>
+"nnoremap <C-t> :NERDTreeToggle<CR>
+"nnoremap <C-f> :NERDTreeFind<CR>
 
 " Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -90,7 +90,8 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin()
-Plug 'preservim/nerdtree'
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
 
 "telescope
 Plug 'nvim-lua/popup.nvim'
@@ -113,11 +114,14 @@ endfun
 augroup autocmds
 	autocmd!
 	autocmd BufWritePre * :call TrimWhiteSpace()
-    autocmd BufWinEnter * silent NERDTreeMirror
+    "autocmd BufWinEnter * silent NERDTreeMirror
 augroup END
 
 "vim.lsp.set_log_level("debug")
 
 lua << EOF
+require('user.nvim-tree')
+require('user.keymaps')
+
 require'lspconfig'.pyright.setup{}
 EOF
