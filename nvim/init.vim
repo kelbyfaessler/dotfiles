@@ -43,6 +43,9 @@ set signcolumn=yes
 "set colorcolumn=80
 set noerrorbells
 
+set splitbelow
+set splitright
+
 "================
 "Remaps
 "================
@@ -93,12 +96,16 @@ call plug#begin()
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 
+"colorschemes
+Plug 'lunarvim/darkplus.nvim'
+
 "telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
 
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
@@ -120,6 +127,7 @@ augroup END
 "vim.lsp.set_log_level("debug")
 
 lua << EOF
+require('user.colorscheme')
 require('user.nvim-tree')
 require('user.keymaps')
 

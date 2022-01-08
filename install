@@ -4,6 +4,7 @@
 pip3 install pynvim
 mkdir -p ~/.config/nvim/lua/user
 ln -s ~/.dotfiles/nvim/init.vim ~/.config/nvim/init.vim
+ln -s ~/.dotfiles/nvim/lua/colorscheme.lua ~/.config/nvim/lua/user/colorscheme.lua
 ln -s ~/.dotfiles/nvim/lua/keymaps.lua ~/.config/nvim/lua/user/keymaps.lua
 ln -s ~/.dotfiles/nvim/lua/nvim-tree.lua ~/.config/nvim/lua/user/nvim-tree.lua
 
