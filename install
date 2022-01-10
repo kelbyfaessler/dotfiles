@@ -7,6 +7,7 @@ ln -s ~/.dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 ln -s ~/.dotfiles/nvim/lua/colorscheme.lua ~/.config/nvim/lua/user/colorscheme.lua
 ln -s ~/.dotfiles/nvim/lua/keymaps.lua ~/.config/nvim/lua/user/keymaps.lua
 ln -s ~/.dotfiles/nvim/lua/nvim-tree.lua ~/.config/nvim/lua/user/nvim-tree.lua
+ln -s ~/.dotfiles/nvim/lua/cmp.lua ~/.config/nvim/lua/user/cmp.lua
 
 # zsh:
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/powerlevel10k

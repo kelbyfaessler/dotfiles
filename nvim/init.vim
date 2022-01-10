@@ -104,6 +104,12 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+"Completions
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-path'
+
+"Lsp
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 
@@ -130,6 +136,7 @@ lua << EOF
 require('user.colorscheme')
 require('user.nvim-tree')
 require('user.keymaps')
+require('user.cmp')
 
 require'lspconfig'.pyright.setup{}
 EOF
