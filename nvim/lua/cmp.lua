@@ -37,12 +37,15 @@ local kind_icons = {
 
 cmp.setup {
   mapping = {
+    -- scroll through completions with k,j in addition to built-in n,p
     ["<C-k>"] = cmp.mapping.select_prev_item(),
     ["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+    -- ctrl space will open completion menu even if you haven't typed yet
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+    -- close completion menu with ctrl, e
     ["<C-e>"] = cmp.mapping {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
@@ -50,6 +53,7 @@ cmp.setup {
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
     ["<CR>"] = cmp.mapping.confirm { select = true },
+    -- can also move through completion options with tab
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -73,6 +77,7 @@ cmp.setup {
       "s",
     }),
   },
+  -- formatting is how the completion menu looks
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
