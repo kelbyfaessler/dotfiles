@@ -99,22 +99,27 @@ Plug 'kyazdani42/nvim-tree.lua'
 "colorschemes
 Plug 'lunarvim/darkplus.nvim'
 
-"telescope
+"infrastructure
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+
+"telescope
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-media-files.nvim'
 
 "Completions
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
+"   cmp-nvim-lua is for the lua api in nvim
+Plug 'hrsh7th/cmp-nvim-lua'
 
 "Lsp
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
-
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 "================
 "Autocmds
@@ -138,6 +143,8 @@ require('user.colorscheme')
 require('user.nvim-tree')
 require('user.keymaps')
 require('user.cmp')
+require('user.lsp')
+require('user.telescope')
 
 require'lspconfig'.pyright.setup{}
 EOF

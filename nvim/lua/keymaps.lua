@@ -25,6 +25,9 @@ keymap("n", "<s-h>", ":bprevious<CR>", opts)
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
+-- Telescope
+-- (TODO: move keymaps from init.vim to here)
+
 
 -- Visual --
 -- Stay in indent mode
