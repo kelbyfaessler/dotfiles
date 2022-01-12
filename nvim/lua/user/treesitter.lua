@@ -11,6 +11,11 @@ configs.setup {
   },
   indent = { enable = true, disable = { "yaml" } },
 
+  --nvim-autopairs config:
+  autopairs = {
+    enable = true,
+  },
+
   --nvim-ts-rainbow config:
   rainbow = {
     enable = true,

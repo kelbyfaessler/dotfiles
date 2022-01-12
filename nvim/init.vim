@@ -107,6 +107,12 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 "   cmp-nvim-lua is for the lua api in nvim
 Plug 'hrsh7th/cmp-nvim-lua'
+"   cmp-luasnip is for snippet completions
+Plug 'saadparwaiz1/cmp_luasnip'
+
+"Snippets
+Plug 'L3MON4D3/LuaSnip'
+Plug 'rafamadriz/friendly-snippets'
 
 "Lsp
 Plug 'neovim/nvim-lspconfig'
@@ -119,6 +125,10 @@ Plug 'williamboman/nvim-lsp-installer'
 Plug 'nvim-treesitter/nvim-treesitter', {'branch': 'master', 'do': ':TSUpdate'}
 "nvim-ts-rainbow colors matching nested brackets in different colors
 Plug 'p00f/nvim-ts-rainbow'
+
+"utils
+"autopairs integrates with both cmp and treesitter
+Plug 'windwp/nvim-autopairs'
 
 call plug#end()
 "================
@@ -146,6 +156,7 @@ require('user.cmp')
 require('user.lsp')
 require('user.telescope')
 require('user.treesitter')
+require('user.autopairs')
 
 require'lspconfig'.pyright.setup{}
 EOF
