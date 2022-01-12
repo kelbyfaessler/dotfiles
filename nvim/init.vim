@@ -115,7 +115,10 @@ Plug 'williamboman/nvim-lsp-installer'
 
 "treesitter
 "Plug 'nvim-treesitter/nvim-treesitter', {'branch': '0.5-compat', 'do': ':TSUpdate'}
+"   use 0.5-compat treesitter branch with nvim 0.5 stable branch
 Plug 'nvim-treesitter/nvim-treesitter', {'branch': 'master', 'do': ':TSUpdate'}
+"nvim-ts-rainbow colors matching nested brackets in different colors
+Plug 'p00f/nvim-ts-rainbow'
 
 call plug#end()
 "================
