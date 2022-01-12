@@ -65,13 +65,6 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
-" NERDTree
-"nnoremap <leader>n :NERDTreeFocus<CR>
-"nnoremap <leader>n :NERDTreeToggle<CR>
-"nnoremap <C-n> :NERDTreeFind<CR>
-"nnoremap <C-t> :NERDTreeToggle<CR>
-"nnoremap <C-f> :NERDTreeFind<CR>
-
 " Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
@@ -120,6 +113,10 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+"treesitter
+"Plug 'nvim-treesitter/nvim-treesitter', {'branch': '0.5-compat', 'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'branch': 'master', 'do': ':TSUpdate'}
+
 call plug#end()
 "================
 "Autocmds
@@ -145,6 +142,7 @@ require('user.keymaps')
 require('user.cmp')
 require('user.lsp')
 require('user.telescope')
+require('user.treesitter')
 
 require'lspconfig'.pyright.setup{}
 EOF

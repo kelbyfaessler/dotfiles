@@ -4,12 +4,7 @@
 pip3 install pynvim
 mkdir -p ~/.config/nvim/lua/user
 ln -s ~/.dotfiles/nvim/init.vim ~/.config/nvim/init.vim
-ln -s ~/.dotfiles/nvim/lua/colorscheme.lua ~/.config/nvim/lua/user/colorscheme.lua
-ln -s ~/.dotfiles/nvim/lua/keymaps.lua ~/.config/nvim/lua/user/keymaps.lua
-ln -s ~/.dotfiles/nvim/lua/nvim-tree.lua ~/.config/nvim/lua/user/nvim-tree.lua
-ln -s ~/.dotfiles/nvim/lua/cmp.lua ~/.config/nvim/lua/user/cmp.lua
-ln -s ~/.dotfiles/nvim/lua/lsp ~/.config/nvim/lua/user/lsp
-ln -s ~/.dotfiles/nvim/lua/telescope.lua ~/.config/nvim/lua/user/telescope.lua
+ln -s ~/.dotfiles/nvim/lua/user ~/.config/nvim/lua/user
 
 # zsh:
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/powerlevel10k
