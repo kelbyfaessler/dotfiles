@@ -126,6 +126,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'branch': 'master', 'do': ':TSUpdate'}
 "nvim-ts-rainbow colors matching nested brackets in different colors
 Plug 'p00f/nvim-ts-rainbow'
 
+"git
+Plug 'lewis6991/gitsigns.nvim'
+
 "utils
 "autopairs integrates with both cmp and treesitter
 Plug 'windwp/nvim-autopairs'
@@ -160,6 +163,7 @@ require('user.telescope')
 require('user.treesitter')
 require('user.autopairs')
 require('user.comment')
+require('user.gitsigns')
 
 require'lspconfig'.pyright.setup{}
 EOF
