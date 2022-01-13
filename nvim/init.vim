@@ -129,8 +129,11 @@ Plug 'p00f/nvim-ts-rainbow'
 "git
 Plug 'lewis6991/gitsigns.nvim'
 
-"bufferline visual buffers
+"buffers
 Plug 'akinsho/bufferline.nvim'
+"   bbye provides :Bdelete command alternative to :bdelete and won't close
+"   windows/nvim when buffers are removed
+Plug 'moll/vim-bbye'
 
 "utils
 "autopairs integrates with both cmp and treesitter
