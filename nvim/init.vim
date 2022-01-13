@@ -129,6 +129,8 @@ Plug 'p00f/nvim-ts-rainbow'
 "utils
 "autopairs integrates with both cmp and treesitter
 Plug 'windwp/nvim-autopairs'
+Plug 'numToStr/Comment.nvim'
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
 call plug#end()
 "================
@@ -157,6 +159,7 @@ require('user.lsp')
 require('user.telescope')
 require('user.treesitter')
 require('user.autopairs')
+require('user.comment')
 
 require'lspconfig'.pyright.setup{}
 EOF

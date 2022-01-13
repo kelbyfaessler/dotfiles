@@ -16,6 +16,12 @@ configs.setup {
     enable = true,
   },
 
+  --comment config
+  context_commentstring = {
+    enable = true,
+    enable_autocmd = false,
+  },
+
   --nvim-ts-rainbow config:
   rainbow = {
     enable = true,
