@@ -129,6 +129,9 @@ Plug 'p00f/nvim-ts-rainbow'
 "git
 Plug 'lewis6991/gitsigns.nvim'
 
+"bufferline visual buffers
+Plug 'akinsho/bufferline.nvim'
+
 "utils
 "autopairs integrates with both cmp and treesitter
 Plug 'windwp/nvim-autopairs'
@@ -164,6 +167,7 @@ require('user.treesitter')
 require('user.autopairs')
 require('user.comment')
 require('user.gitsigns')
+require('user.bufferline')
 
 require'lspconfig'.pyright.setup{}
 EOF
