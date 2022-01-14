@@ -46,6 +46,8 @@ set noerrorbells
 set splitbelow
 set splitright
 
+set termguicolors
+
 "================
 "Remaps
 "================
