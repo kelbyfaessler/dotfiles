@@ -26,6 +26,10 @@ keymap("n", "<leader>q", ":Bdelete<CR>", opts)
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
+-- Formatting
+-- For a keymap to autoformat current buffer, do something like this:
+-- keymap("n", "<leader>o", ":Format<cr>", opts)
+
 -- Telescope
 -- (TODO: move keymaps from init.vim to here)
 
