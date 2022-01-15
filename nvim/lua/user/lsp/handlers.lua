@@ -80,6 +80,8 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
+  -- If language server also provides formatting and it collides with null-ls,
+  -- can use the following method to disable language server formatting
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
   end
