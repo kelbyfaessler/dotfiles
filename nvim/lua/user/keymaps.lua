@@ -37,6 +37,9 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 keymap('n', '<C-_>', '<CMD>lua require("Comment.api").call("toggle_current_linewise_op")<CR>g@$', opts)
 keymap('n', '<leader>/', '<CMD>lua require("Comment.api").call("toggle_current_linewise_op")<CR>g@$', opts)
 
+-- Git
+keymap("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true, silent = true})
+
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)

@@ -6,9 +6,13 @@ if ! zsh --version; then
     sudo apt -y install zsh
 fi
 
+sudo apt-get install tree
+
 # install ripgrep (needed by telescope live_grep)
 curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
 sudo dpkg -i ripgrep_13.0.0_amd64.deb
 
-sudo apt-get install tree
-
+# install lazygit
+sudo add-apt-repository ppa:lazygit-team/release
+sudo apt-get update
+sudo apt-get install lazygit

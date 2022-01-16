@@ -138,6 +138,9 @@ Plug 'akinsho/bufferline.nvim'
 "   windows/nvim when buffers are removed
 Plug 'moll/vim-bbye'
 
+"terminal
+Plug 'akinsho/toggleterm.nvim'
+
 "utils
 "autopairs integrates with both cmp and treesitter
 Plug 'windwp/nvim-autopairs'
@@ -174,6 +177,7 @@ require('user.autopairs')
 require('user.comment')
 require('user.gitsigns')
 require('user.bufferline')
+require('user.toggleterm')
 
 require'lspconfig'.pyright.setup{}
 EOF
