@@ -131,6 +131,7 @@ Plug 'p00f/nvim-ts-rainbow'
 
 "git
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'tanvirtin/vgit.nvim'
 
 "buffers
 Plug 'akinsho/bufferline.nvim'
@@ -178,6 +179,7 @@ require('user.comment')
 require('user.gitsigns')
 require('user.bufferline')
 require('user.toggleterm')
+require('user.vgit')
 
 require'lspconfig'.pyright.setup{}
 EOF
