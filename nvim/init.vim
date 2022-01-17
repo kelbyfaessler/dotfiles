@@ -152,18 +152,19 @@ call plug#end()
 "================
 "Autocmds
 "================
-fun! TrimWhiteSpace()
-	let l:save = winsaveview()
-	keeppatterns %s/\s\+$//e
-	call winrestview(l:save)
-endfun
-
-augroup autocmds
-	autocmd!
-	autocmd BufWritePre * :call TrimWhiteSpace()
-    "autocmd BufWinEnter * silent NERDTreeMirror
-augroup END
-
+" remove whitespace autocmd because language formatters should handle this
+" fun! TrimWhiteSpace()
+" 	let l:save = winsaveview()
+" 	keeppatterns %s/\s\+$//e
+" 	call winrestview(l:save)
+" endfun
+"
+" augroup autocmds
+" 	autocmd!
+" 	autocmd BufWritePre * :call TrimWhiteSpace()
+"     "autocmd BufWinEnter * silent NERDTreeMirror
+" augroup END
+"
 "vim.lsp.set_log_level("debug")
 
 lua << EOF
