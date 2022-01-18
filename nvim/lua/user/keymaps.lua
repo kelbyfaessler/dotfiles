@@ -5,7 +5,9 @@ local opts = {
 
 local keymap = vim.api.nvim_set_keymap
 
+-------------------------------------------------------------------------------
 -- Normal --
+-------------------------------------------------------------------------------
 -- Window Navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -40,7 +42,9 @@ keymap('n', '<leader>/', '<CMD>lua require("Comment.api").call("toggle_current_l
 -- Git
 keymap("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true, silent = true})
 
+-------------------------------------------------------------------------------
 -- Visual --
+-------------------------------------------------------------------------------
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
@@ -48,3 +52,10 @@ keymap("v", ">", ">gv", opts)
 -- Comment
 keymap('x', '<C-_>', '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', opts)
 keymap('x', '<leader>/', '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', opts)
+
+
+-------------------------------------------------------------------------------
+-- Insert --
+-------------------------------------------------------------------------------
+-- TODO: could add keymap to escape autopaired parens (e.g. quick jl)
+-- TODO: could add keymap to escape insert mode (e.g. quick jj)
