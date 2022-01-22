@@ -88,15 +88,18 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin()
+"infrastructure
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
+
+"Navigation
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'phaazon/hop.nvim'
 
 "colorschemes
 Plug 'lunarvim/darkplus.nvim'
 
-"infrastructure
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
 
 "telescope
 Plug 'nvim-telescope/telescope.nvim'
@@ -181,6 +184,7 @@ require('user.gitsigns')
 require('user.bufferline')
 require('user.toggleterm')
 require('user.vgit')
+require('user.hop')
 
 require'lspconfig'.pyright.setup{}
 EOF
