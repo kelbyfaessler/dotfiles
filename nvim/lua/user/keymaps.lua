@@ -60,6 +60,8 @@ keymap('x', '<C-_>', '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vi
 keymap('x', '<leader>/', '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', opts)
 
 
+keymap('v', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>", {})
+keymap('v', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>", {})
 -------------------------------------------------------------------------------
 -- Insert --
 -------------------------------------------------------------------------------
