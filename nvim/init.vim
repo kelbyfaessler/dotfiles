@@ -8,7 +8,6 @@ set mouse=a
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
-set smartindent
 
 "if there's a vimrc in the project you open with nvim, it'll source it for you
 "set exrc
@@ -168,6 +167,12 @@ call plug#end()
 " augroup END
 "
 "vim.lsp.set_log_level("debug")
+"
+" Indentation per filetype if different from default above
+autocmd FileType python setlocal shiftwidth=4 softtabstop=4 expandtab
+autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType vue setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType html setlocal shiftwidth=2 softtabstop=2 expandtab
 
 lua << EOF
 require('user.colorscheme')
