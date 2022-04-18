@@ -47,6 +47,7 @@ keymap('n', '<leader>/', '<CMD>lua require("Comment.api").call("toggle_current_l
 
 -- Git
 -- keymap("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true, silent = true})
+keymap("n", "<leader>gi", "<cmd>FloatermNew lazygit<CR>", {noremap = true, silent = true})
 
 -------------------------------------------------------------------------------
 -- Visual --

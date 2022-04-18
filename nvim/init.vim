@@ -47,6 +47,10 @@ set splitright
 
 set termguicolors
 
+"floaterm
+let g:floaterm_width = 0.95
+let g:floaterm_height = 0.95
+
 "================
 "Remaps
 "================
@@ -132,7 +136,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'branch': 'master', 'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
 
 "git
-Plug 'lewis6991/gitsigns.nvim'
+" Plug 'lewis6991/gitsigns.nvim'
+" For lazygit:
+Plug 'voldikss/vim-floaterm'
 
 "buffers
 Plug 'akinsho/bufferline.nvim'
@@ -185,7 +191,7 @@ require('user.telescope')
 require('user.treesitter')
 require('user.autopairs')
 require('user.comment')
-require('user.gitsigns')
+-- require('user.gitsigns')
 require('user.bufferline')
 require('user.toggleterm')
 require('user.hop')

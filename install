@@ -22,3 +22,6 @@ git clone --depth=1 https://github.com/junegunn/fzf ~/.config/fzf
 cd ~/.config/fzf
 ./install --no-update-rc --no-bash --no-fish
 
+# lazygit configuration
+mkdir -p ~/.config/lazygit
+ln -s ~/.dotfiles/lazygit/config.yml ~/.config/lazygit/config.yml
