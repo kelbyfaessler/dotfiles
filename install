@@ -2,7 +2,7 @@
 
 # vim:
 pip3 install pynvim
-mkdir -p ~/.config/nvim/lua/user
+mkdir -p ~/.config/nvim/lua
 ln -s ~/.dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 ln -s ~/.dotfiles/nvim/lua/user ~/.config/nvim/lua/user
 
