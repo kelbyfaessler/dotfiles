@@ -154,6 +154,7 @@ Plug 'akinsho/toggleterm.nvim'
 Plug 'windwp/nvim-autopairs'
 Plug 'numToStr/Comment.nvim'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+Plug 'subnut/visualstar.vim'
 
 call plug#end()
 "================
