@@ -6,6 +6,8 @@ if ! zsh --version; then
     sudo apt -y install zsh
 fi
 
+pip3 install pynvim
+
 sudo apt-get install tree
 
 # install ripgrep (needed by telescope live_grep)

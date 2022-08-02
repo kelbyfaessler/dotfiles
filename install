@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # vim:
-pip3 install pynvim
 mkdir -p ~/.config/nvim/lua
 ln -s ~/.dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 ln -s ~/.dotfiles/nvim/lua/user ~/.config/nvim/lua/user
@@ -14,6 +13,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/zsh-aut
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/zsh-syntax-highlighting
 
+touch ~/.zshrc_local
 ln -s ~/.dotfiles/zsh/.zshrc ~/.zshrc
 
 # fzf (can be used with zsh, tmux, nvim. I currently use with zsh)
