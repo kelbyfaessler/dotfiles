@@ -154,6 +154,7 @@ Plug 'akinsho/toggleterm.nvim'
 Plug 'windwp/nvim-autopairs'
 Plug 'numToStr/Comment.nvim'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+Plug 'subnut/visualstar.vim'
 
 call plug#end()
 "================
@@ -180,6 +181,7 @@ autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType vue setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType html setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType javascriptreact setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType svelte setlocal shiftwidth=2 softtabstop=2 expandtab
 
 lua << EOF
 require('user.colorscheme')
