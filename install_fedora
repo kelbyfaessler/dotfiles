@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+sudo dnf upgrade --refresh
+
+# install g++ (needed for treesitter compilations)
+sudo dnf install gcc-c++
+
+if ! zsh --version; then
+    sudo dnf install zsh
+fi
+
+sudo dnf install -y neovim python3-neovim
+
+sudo dnf install tree
+
+# install telescop dependencies
+#   (ripgrep needed by telescope live_grep)
+#   (fd needed by telescope file search)
+sudo dnf install ripgrep
+sudo dnf install fd-find
+
+# install lazygit (cool other package repo, for now)
+sudo dnf copr enable atim/lazygit -y
+sudo dnf install lazygit
+
+# install imwheel configuration (for faster mouse scrolling)
+ln -s ~/.dotfiles/misc/.imwheelrc ~/.imwheelrc
+ln -s ~/.dotfiles/misc/imwheel.desktop ~/.config/autostart/imwheel.desktop
+
+# install vscode
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+sudo dnf install code
