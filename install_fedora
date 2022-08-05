@@ -9,9 +9,18 @@ if ! zsh --version; then
     sudo dnf install zsh
 fi
 
-sudo dnf install -y neovim python3-neovim
+# install recommended nerd font for powerlevel10k
+# for more info, see:
+# https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts
+curl -fLo "MesloLGS NF Regular.ttf" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
+curl -fLo "MesloLGS NF Bold.ttf" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
+curl -fLo "MesloLGS NF Italic.ttf" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
+curl -fLo "MesloLGS NF Bold Italic.ttf" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
+cd -
 
-sudo dnf install tree
+sudo dnf install -y neovim python3-neovim
 
 # install telescop dependencies
 #   (ripgrep needed by telescope live_grep)
@@ -31,3 +40,5 @@ ln -s ~/.dotfiles/misc/imwheel.desktop ~/.config/autostart/imwheel.desktop
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 sudo dnf install code
+
+sudo dnf install tree
