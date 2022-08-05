@@ -137,8 +137,6 @@ Plug 'p00f/nvim-ts-rainbow'
 
 "git
 " Plug 'lewis6991/gitsigns.nvim'
-" For lazygit:
-Plug 'voldikss/vim-floaterm'
 
 "buffers
 Plug 'akinsho/bufferline.nvim'
@@ -147,7 +145,10 @@ Plug 'akinsho/bufferline.nvim'
 Plug 'moll/vim-bbye'
 
 "terminal
-Plug 'akinsho/toggleterm.nvim'
+" Had issues with toggleterm so switched to floaterm for lazygit
+" Plug 'akinsho/toggleterm.nvim'
+" For lazygit:
+Plug 'voldikss/vim-floaterm'
 
 "utils
 "autopairs integrates with both cmp and treesitter
@@ -195,7 +196,7 @@ require('user.autopairs')
 require('user.comment')
 -- require('user.gitsigns')
 require('user.bufferline')
-require('user.toggleterm')
+-- require('user.toggleterm')
 require('user.hop')
 
 require'lspconfig'.pyright.setup{}

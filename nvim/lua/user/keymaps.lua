@@ -46,7 +46,7 @@ keymap('n', '<C-_>', '<CMD>lua require("Comment.api").call("toggle_current_linew
 keymap('n', '<leader>/', '<CMD>lua require("Comment.api").call("toggle_current_linewise_op")<CR>g@$', opts)
 
 -- Git
--- keymap("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true, silent = true})
+-- keymap("n", "<leader>gi", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
 keymap("n", "<leader>gi", "<cmd>FloatermNew lazygit<CR>", {noremap = true, silent = true})
 
 -------------------------------------------------------------------------------
