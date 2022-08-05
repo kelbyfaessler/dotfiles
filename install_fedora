@@ -5,6 +5,19 @@ sudo dnf upgrade --refresh
 # install g++ (needed for treesitter compilations)
 sudo dnf install gcc-c++
 
+# install rust and cargo
+sudo dnf install rust cargo
+
+# install fnm for managing node versions
+curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
+echo '' >>~/.zshrc_local
+echo '# fnm' >>~/.zshrc_local
+echo 'export PATH='$HOME/.fnm':$PATH' >>~/.zshrc_local
+echo 'eval "`fnm env`"' >>~/.zshrc_local
+
+# install node
+fnm install 18.7.0
+
 if ! zsh --version; then
     sudo dnf install zsh
 fi
@@ -20,7 +33,9 @@ curl -fLo "MesloLGS NF Italic.ttf" https://github.com/romkatv/powerlevel10k-medi
 curl -fLo "MesloLGS NF Bold Italic.ttf" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
 cd -
 
+# install neovim
 sudo dnf install -y neovim python3-neovim
+npm install -g neovim
 
 # install telescop dependencies
 #   (ripgrep needed by telescope live_grep)
