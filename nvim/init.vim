@@ -31,6 +31,7 @@ set smartcase
 set incsearch
 set hlsearch
 "set nohlsearch
+nnoremap <esc> :noh <CR>
 
 " start scrolling 8 rows from bottom of page, instead of all the way at bottom
 set scrolloff=8
