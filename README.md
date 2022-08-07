@@ -7,12 +7,17 @@ cd ~/.dotfiles
 ./install
 ```
 
-Then, install zsh if not already installed (can check with `zsh --version`).
-For debian/ubuntu systems this can be done with `./install_debian`
+Then, install other software with platform-specific install scripts e.g. 
+- fedora: `./install_fedora`
+- debian/ubuntu: `./install_debian`
 
 Neovim Config:
 - My neovim config is based on this repo (https://github.com/LunarVim/Neovim-from-scratch) which also has a corresponding youtube video series (https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ)
 - That neovim config then evolved into this repo (https://github.com/LunarVim/nvim-basic-ide)
+
+Additional Fedora manual setup:
+- Go into display settings and turn on night light for blue light filter
+- The fedora install script sets up imwheel for faster mouse scrolling. That was based on this link: http://www.webupd8.org/2015/12/how-to-change-mouse-scroll-wheel-speed.html
 
 NOTES:
 - In windows, for the Powerlevel10k zsh theme, you'll have to manually install Meslo Nerd Font (see https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k)
