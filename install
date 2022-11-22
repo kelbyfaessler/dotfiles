@@ -25,3 +25,6 @@ cd ~/.config/fzf
 # lazygit configuration
 mkdir -p ~/.config/lazygit
 ln -s ~/.dotfiles/lazygit/config.yml ~/.config/lazygit/config.yml
+
+# git options
+git config --global --add --bool push.autoSetupRemote true
