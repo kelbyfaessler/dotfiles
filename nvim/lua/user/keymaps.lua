@@ -35,19 +35,18 @@ keymap('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hin
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Formatting
--- For a keymap to autoformat current buffer, do something like this:
--- keymap("n", "<leader>o", ":Format<cr>", opts)
+keymap("n", "<leader>o", ":Format<cr>", opts)
 
 -- Telescope
 -- (TODO: move keymaps from init.vim to here)
 
 -- Comment
-keymap('n', '<C-_>', '<CMD>lua require("Comment.api").call("toggle_current_linewise_op")<CR>g@$', opts)
-keymap('n', '<leader>/', '<CMD>lua require("Comment.api").call("toggle_current_linewise_op")<CR>g@$', opts)
+keymap('n', '<C-_>', '<Plug>(comment_toggle_linewise_current)', opts)
+keymap('n', '<leader>/', '<Plug>(comment_toggle_linewise_current)', opts)
 
 -- Git
 -- keymap("n", "<leader>gi", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
-keymap("n", "<leader>gi", "<cmd>FloatermNew lazygit<CR>", {noremap = true, silent = true})
+keymap("n", "<leader>i", "<cmd>FloatermNew lazygit<CR>", {noremap = true, silent = true})
 
 -------------------------------------------------------------------------------
 -- Visual --
@@ -57,8 +56,8 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Comment
-keymap('x', '<C-_>', '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', opts)
-keymap('x', '<leader>/', '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', opts)
+keymap('x', '<C-_>', '<Plug>(comment_toggle_linewise_visual)', opts)
+keymap('x', '<leader>/', '<Plug>(comment_toggle_linewise_visual)', opts)
 
 
 keymap('v', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>", {})
