@@ -18,6 +18,10 @@ Neovim Config:
 Additional Fedora manual setup:
 - Go into display settings and turn on night light for blue light filter
 - The fedora install script sets up imwheel for faster mouse scrolling. That was based on this link: http://www.webupd8.org/2015/12/how-to-change-mouse-scroll-wheel-speed.html
+- Settings->Multitasking->Hot Corner->disable
+- Settings->Keyboard->Keyboard Shortcuts->Switch Windows->Alt + Tab
+- Settings->Keyboard->View and Customize Shortcuts->Switch Applications->Super + Tab
+- To install postman: Software App->Postman (install flatpak version, which is easiest/most native of postman's offered installation methods)
 
 NOTES:
 - In windows, for the Powerlevel10k zsh theme, you'll have to manually install Meslo Nerd Font (see https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k)
