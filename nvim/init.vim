@@ -98,7 +98,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 
 "Navigation
-Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kyazdani42/nvim-tree.lua', {'commit': 'fb8735e96cecf004fbefb086ce85371d003c5129'}
 Plug 'phaazon/hop.nvim'
 
 "colorschemes
@@ -130,9 +130,7 @@ Plug 'jose-elias-alvarez/null-ls.nvim'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "treesitter
-"Plug 'nvim-treesitter/nvim-treesitter', {'branch': '0.5-compat', 'do': ':TSUpdate'}
-"   use 0.5-compat treesitter branch with nvim 0.5 stable branch
-Plug 'nvim-treesitter/nvim-treesitter', {'branch': 'master', 'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "nvim-ts-rainbow colors matching nested brackets in different colors
 Plug 'p00f/nvim-ts-rainbow'
 
