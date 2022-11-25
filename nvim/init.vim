@@ -183,6 +183,7 @@ autocmd FileType vue setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType html setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType javascriptreact setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType svelte setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType astro setlocal shiftwidth=4 softtabstop=4 expandtab
 
 lua << EOF
 require('user.colorscheme')
