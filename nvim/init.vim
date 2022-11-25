@@ -156,6 +156,7 @@ Plug 'windwp/nvim-autopairs'
 Plug 'numToStr/Comment.nvim'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'subnut/visualstar.vim'
+Plug 'toppair/peek.nvim', { 'do': 'deno task --quiet build:fast' }
 
 call plug#end()
 "================
