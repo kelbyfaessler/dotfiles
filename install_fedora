@@ -22,7 +22,7 @@ sudo dnf install gcc-c++
 sudo dnf install rust cargo
 
 # install fnm for managing node versions
-curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
+curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "$HOME/.fnm" --skip-shell
 echo '' >>~/.zshrc_local
 echo '# fnm' >>~/.zshrc_local
 echo 'export PATH='$HOME/.fnm':$PATH' >>~/.zshrc_local
