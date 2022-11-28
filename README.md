@@ -22,6 +22,9 @@ Additional Fedora manual setup:
 - Settings->Keyboard->Keyboard Shortcuts->Switch Windows->Alt + Tab
 - Settings->Keyboard->View and Customize Shortcuts->Switch Applications->Super + Tab
 - To install postman: Software App->Postman (install flatpak version, which is easiest/most native of postman's offered installation methods)
+- To enable fractional scaling: `gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']`
+- To enable tap-to-click on touchpad: `gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true`
+- For intel 12th gen CPU, to remove conflict with ambient light sensor and enable backlight brightness buttons: `sudo grubby --update-kernel=ALL --args="module_blacklist=hid_sensor_hub"`
 
 NOTES:
 - In windows, for the Powerlevel10k zsh theme, you'll have to manually install Meslo Nerd Font (see https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k)
