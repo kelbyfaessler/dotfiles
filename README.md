@@ -23,6 +23,17 @@ Poetry setup on linux:
     - `poetry config virtualenvs.in-project true`
     - `poetry config --list` (virtualenvs.in-project should be true)
 
+Reasons I picked `fnm` for node version manager:
+- It's faster than nvm (2x to 40x) and nvm is bash based/a bash alias
+- It's written in rust, hence speed but also correctness
+- It tries to provide same features as nvm
+- It's a binary exec so can easily run in CI systems
+- Cross platform (windows too) and integrates with other shells (e.g. fish)
+- fnm supports more platforms than `n`
+- fnm supports .nvmrc and .node-version files while `volta` currently doesn't
+- `volta` seems to try to do more than simply node version and is more complicated than fnm
+- Potential replacement for `fnm` in future: `pnpm`
+
 Additional Fedora manual setup:
 - Go into display settings and turn on night light for blue light filter
 - The fedora install script sets up imwheel for faster mouse scrolling. That was based on this link: http://www.webupd8.org/2015/12/how-to-change-mouse-scroll-wheel-speed.html
