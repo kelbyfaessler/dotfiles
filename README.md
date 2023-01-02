@@ -15,6 +15,14 @@ Neovim Config:
 - My neovim config is based on this repo (https://github.com/LunarVim/Neovim-from-scratch) which also has a corresponding youtube video series (https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ)
 - That neovim config then evolved into this repo (https://github.com/LunarVim/nvim-basic-ide)
 
+Poetry setup on linux:
+- Have installed poetry previously using they're official install script via curl. Pipx is an alternative to try and see if it handles pyenv better.
+- I like to configure poetry to install dependencies in a venv in each project locally. To configure this:
+    - `ll ~/.config/pypoetry` this probably won't exist initially
+    - `poetry config --list` (virtualenvs.in-project probably false)
+    - `poetry config virtualenvs.in-project true`
+    - `poetry config --list` (virtualenvs.in-project should be true)
+
 Additional Fedora manual setup:
 - Go into display settings and turn on night light for blue light filter
 - The fedora install script sets up imwheel for faster mouse scrolling. That was based on this link: http://www.webupd8.org/2015/12/how-to-change-mouse-scroll-wheel-speed.html
