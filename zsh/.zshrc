@@ -25,6 +25,8 @@ alias ll="ls -lah"
 alias prune-local="git fetch -p && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D"
 alias vim="nvim"
 alias vi="nvim"
+alias v="nvim"
+alias n="nvim"
 
 # Autocomplete with case insensitivity
 # zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
