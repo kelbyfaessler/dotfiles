@@ -14,6 +14,7 @@ Then, install other software with platform-specific install scripts e.g.
 Neovim Config:
 - My neovim config is based on this repo (https://github.com/LunarVim/Neovim-from-scratch) which also has a corresponding youtube video series (https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ)
 - That neovim config then evolved into this repo (https://github.com/LunarVim/nvim-basic-ide)
+- FOR UPDATING NVIM VERSIONS, SEE `nvim-basic-ide`
 
 Poetry setup on linux:
 - Have installed poetry previously using they're official install script via curl. Pipx is an alternative to try and see if it handles pyenv better.
