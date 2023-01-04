@@ -21,6 +21,9 @@ Neovim Config:
     - Use floaterm with lazygit instead of toggleterm
     - Remove friendly snippets plugin
     - Remove indent-blankline plugin (visually highlight indentation level)
+- Things I may want to add later:
+    - fzf implmentation in c (faster): https://github.com/nvim-telescope/telescope-fzf-native.nvim
+    - treesitter customization in kickstart.nvim
 
 Poetry setup on linux:
 - Have installed poetry previously using they're official install script via curl. Pipx is an alternative to try and see if it handles pyenv better.
