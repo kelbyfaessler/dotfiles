@@ -33,11 +33,20 @@ require("mason-lspconfig").setup({
 
 local lspconfig = require("lspconfig")
 
-local jsonls_opts = require("user.lsp.settings.jsonls")
-lspconfig.sumneko_lua.setup(jsonls_opts)
+local opts = {}
 
-local sumneko_opts = require("user.lsp.settings.sumneko_lua")
-lspconfig.sumneko_lua.setup(sumneko_opts)
+for _, server in pairs(servers) do
+	opts = {
+		on_attach = require("user.lsp.handlers").on_attach,
+		capabilities = require("user.lsp.handlers").capabilities,
+	}
 
-local pyright_opts = require("user.lsp.settings.pyright")
-lspconfig.sumneko_lua.setup(pyright_opts)
+	server = vim.split(server, "@")[1]
+
+	local require_ok, conf_opts = pcall(require, "user.lsp.settings." .. server)
+	if require_ok then
+		opts = vim.tbl_deep_extend("force", conf_opts, opts)
+	end
+
+	lspconfig[server].setup(opts)
+end
