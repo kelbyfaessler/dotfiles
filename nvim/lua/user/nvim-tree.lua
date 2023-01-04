@@ -57,10 +57,10 @@ require'nvim-tree'.setup {
     mappings = {
       custom_only = true,
       list = {
-        { key = {"l", "<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
+        -- { key = {"l", "<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
         -- I wonder if simply mapping space to edit would be enough to overwrite the
         -- leader keymap and get what I want (space opens files only in nvim-tree context)?
-        -- { key = {" ", l", <CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
+        { key = {" ", "l", "<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
         { key = {"<2-RightMouse>", "<C-]>"},    cb = tree_cb("cd") },
         { key = "<C-v>",                        cb = tree_cb("vsplit") },
         -- nvim-basic-ide uses 'v' for vsplit, does that override visual mode?
