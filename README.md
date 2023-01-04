@@ -12,9 +12,15 @@ Then, install other software with platform-specific install scripts e.g.
 - debian/ubuntu: `./install_debian`
 
 Neovim Config:
-- My neovim config is based on this repo (https://github.com/LunarVim/Neovim-from-scratch) which also has a corresponding youtube video series (https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ)
-- That neovim config then evolved into this repo (https://github.com/LunarVim/nvim-basic-ide)
 - FOR UPDATING NVIM VERSIONS, SEE `nvim-basic-ide`
+- My neovim config used to be based on this repo (https://github.com/LunarVim/Neovim-from-scratch) which also has a corresponding youtube video series (https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ)
+- That neovim config then evolved into this repo (https://github.com/LunarVim/nvim-basic-ide) which is now the basis for my neovim config
+- Customizations I've made to that:
+    - Add hop plugin
+    - Add telescope media files plugin
+    - Use floaterm with lazygit instead of toggleterm
+    - Remove friendly snippets plugin
+    - Remove indent-blankline plugin (visually highlight indentation level)
 
 Poetry setup on linux:
 - Have installed poetry previously using they're official install script via curl. Pipx is an alternative to try and see if it handles pyenv better.

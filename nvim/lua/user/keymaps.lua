@@ -1,9 +1,22 @@
+local keymap = vim.keymap.set
+
 local opts = {
-    noremap = true,
     silent = true
 }
 
-local keymap = vim.api.nvim_set_keymap
+-------------------------------------------------------------------------------
+-- Modes
+--   normal_mode = "n",
+--   insert_mode = "i",
+--   visual_mode = "v",
+--   visual_block_mode = "x",
+--   term_mode = "t",
+--   command_mode = "c",
+--   operator_mode = "o",
+
+--Remap space as leader key
+keymap("", "<Space>", "<Nop>", opts)
+vim.g.mapleader = " "
 
 -------------------------------------------------------------------------------
 -- Normal --
@@ -24,6 +37,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<s-l>", ":bnext<CR>", opts)
 keymap("n", "<s-h>", ":bprevious<CR>", opts)
 keymap("n", "<leader>q", ":Bdelete<CR>", opts)
+keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
 keymap('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>", {})
 keymap('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>", {})
@@ -35,10 +49,17 @@ keymap('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hin
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Formatting
-keymap("n", "<leader>o", ":Format<cr>", opts)
+keymap("n", "<leader>o", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
+
+-- Searching
+keymap("n", "<esc>", "<cmd>noh<CR>", opts)
 
 -- Telescope
--- (TODO: move keymaps from init.vim to here)
+keymap("n", "<leader>f", ":Telescope find_files<CR>", opts)
+keymap("n", "<leader>g", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>p", ":Telescope projects<CR>", opts)
+keymap("n", "<leader>b", ":Telescope buffers<CR>", opts)
+
 
 -- Comment
 keymap('n', '<C-_>', '<Plug>(comment_toggle_linewise_current)', opts)
@@ -47,6 +68,17 @@ keymap('n', '<leader>/', '<Plug>(comment_toggle_linewise_current)', opts)
 -- Git
 -- keymap("n", "<leader>gi", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
 keymap("n", "<leader>i", "<cmd>FloatermNew lazygit<CR>", {noremap = true, silent = true})
+
+-- DAP
+keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
+keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
+keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
+keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", opts)
+keymap("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", opts)
+keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
+keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
+keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
+keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 -------------------------------------------------------------------------------
 -- Visual --

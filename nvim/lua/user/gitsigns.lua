@@ -9,9 +9,6 @@ gitsigns.setup {
     changedelete = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
   },
   signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
-  numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
-  linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
-  word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
   watch_gitdir = {
     interval = 1000,
     follow_files = true,
@@ -22,7 +19,6 @@ gitsigns.setup {
     virt_text = true,
     virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
     delay = 1000,
-    ignore_whitespace = false,
   },
   current_line_blame_formatter_opts = {
     relative_time = false,
@@ -38,8 +34,5 @@ gitsigns.setup {
     relative = "cursor",
     row = 0,
     col = 1,
-  },
-  yadm = {
-    enable = false,
   },
 }
