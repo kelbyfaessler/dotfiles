@@ -46,3 +46,5 @@ vim.opt.errorbells = false
 vim.g.floaterm_width = 0.95
 vim.g.floaterm_height = 0.95
 
+-- settings that used to be in my config but aren't now that could be causing the floating window exits
+-- vim.opt.hidden = true
