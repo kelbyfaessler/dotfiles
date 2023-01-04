@@ -22,8 +22,11 @@ Neovim Config:
     - Remove friendly snippets plugin
     - Remove indent-blankline plugin (visually highlight indentation level)
 - Things I may want to add later:
+    - show prior projects by default on start page
+    - add keybind for :Telescope projects
     - fzf implmentation in c (faster): https://github.com/nvim-telescope/telescope-fzf-native.nvim
     - treesitter customization in kickstart.nvim
+    - try some custom start page themes from https://github.com/goolord/alpha-nvim/discussions/16
 
 Poetry setup on linux:
 - Have installed poetry previously using they're official install script via curl. Pipx is an alternative to try and see if it handles pyenv better.
