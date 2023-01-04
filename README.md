@@ -21,7 +21,8 @@ Neovim Config:
     - Use floaterm with lazygit instead of toggleterm
     - Remove friendly snippets plugin
     - Remove indent-blankline plugin (visually highlight indentation level)
-- Things I may want to add later:
+- TODO: Things I may want to add later:
+    - customize lualine (add filepath)
     - show prior projects by default on start page
     - add keybind for :Telescope projects
     - fzf implmentation in c (faster): https://github.com/nvim-telescope/telescope-fzf-native.nvim
