@@ -23,6 +23,7 @@ Neovim Config:
     - Remove indent-blankline plugin (visually highlight indentation level)
 - TODO: Things I may want to add later:
     - customize lualine (add filepath)
+    - try leap plugin (which may not conflict with existing hop keymaps since it uses 's' which I don't use normally)
     - show prior projects by default on start page
     - add keybind for :Telescope projects
     - fzf implmentation in c (faster): https://github.com/nvim-telescope/telescope-fzf-native.nvim
