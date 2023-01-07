@@ -3,8 +3,8 @@ local luasnip = require("luasnip")
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
-    local col = vim.fn.col "." - 1
-    return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+    local col = vim.fn.col(".") - 1
+    return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
 --   פּ ﯟ   some other good icons
@@ -37,7 +37,7 @@ local kind_icons = {
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
-cmp.setup {
+cmp.setup({
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -52,13 +52,13 @@ cmp.setup {
         -- ctrl space will open completion menu even if you haven't typed yet
         ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
         -- close completion menu with ctrl, e
-        ["<C-e>"] = cmp.mapping {
+        ["<C-e>"] = cmp.mapping({
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
-        },
+        }),
         -- Accept currently selected item. If none selected, `select` first item.
         -- Set `select` to `false` to only confirm explicitly selected items.
-        ["<CR>"] = cmp.mapping.confirm { select = true },
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
         -- can also move through completion options with tab
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
@@ -125,4 +125,4 @@ cmp.setup {
         ghost_text = false,
         native_menu = false,
     },
-}
+})

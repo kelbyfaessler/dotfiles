@@ -1,34 +1,34 @@
 local configs = require("nvim-treesitter.configs")
 
-configs.setup {
-  -- ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-  ignore_install = { "" }, -- List of parsers to ignore installing
-  highlight = {
-    enable = true, -- false will disable the whole extension
-    disable = { "" }, -- list of language that will be disabled
-  },
-  indent = { enable = true, disable = { "yaml" } },
+configs.setup({
+    -- ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
+    ignore_install = { "" }, -- List of parsers to ignore installing
+    highlight = {
+        enable = true, -- false will disable the whole extension
+        disable = { "" }, -- list of language that will be disabled
+    },
+    indent = { enable = true, disable = { "yaml" } },
 
-  --nvim-autopairs config:
-  autopairs = {
-    enable = true,
-  },
+    --nvim-autopairs config:
+    autopairs = {
+        enable = true,
+    },
 
-  --comment config
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
-  },
+    --comment config
+    context_commentstring = {
+        enable = true,
+        enable_autocmd = false,
+    },
 
-  --nvim-ts-rainbow config:
-  rainbow = {
-    enable = true,
-    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-    max_file_lines = nil, -- Do not enable for files with more than n lines, int
-    -- colors = {}, -- table of hex strings
-    -- termcolors = {} -- table of colour name strings
-  }
-}
+    --nvim-ts-rainbow config:
+    rainbow = {
+        enable = true,
+        -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+        extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+        max_file_lines = nil, -- Do not enable for files with more than n lines, int
+        -- colors = {}, -- table of hex strings
+        -- termcolors = {} -- table of colour name strings
+    },
+})

@@ -1,6 +1,6 @@
 local comment = require("Comment")
 
-comment.setup {
+comment.setup({
     ---Add a space b/w comment and the line
     padding = true,
     ---Whether the cursor should stay at its position
@@ -11,12 +11,12 @@ comment.setup {
     ---Enable keybindings
     ---NOTE: If given `false` then the plugin won't create any mappings
     mappings = {
-    ---Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
-    basic = false,
-    ---Extra mapping; `gco`, `gcO`, `gcA`
-    extra = false,
-    ---Extended mapping; `g>` `g<` `g>[count]{motion}` `g<[count]{motion}`
-    extended = false,
+        ---Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
+        basic = false,
+        ---Extra mapping; `gco`, `gcO`, `gcA`
+        extra = false,
+        ---Extended mapping; `g>` `g<` `g>[count]{motion}` `g<[count]{motion}`
+        extended = false,
     },
     pre_hook = function(ctx)
         -- Only calculate commentstring for tsx filetypes
@@ -40,4 +40,4 @@ comment.setup {
             })
         end
     end,
-}
+})
