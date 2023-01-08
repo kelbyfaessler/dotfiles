@@ -93,3 +93,6 @@ sudo dnf install xz-devel
 # install dependencies that might be needed by poetry to compile/install project dependencies
 sudo dnf install python3-devel
 sudo dnf install postgresql-devel
+
+# stylua formatter for lua code (e.g. neovim config)
+cargo install stylua
