@@ -20,7 +20,19 @@ null_ls.setup({
             extra_filetypes = { "toml" },
             extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
         }),
-        formatting.black.with({ extra_args = { "--fast" } }),
+        formatting.isort.with({
+            -- this is added so it respects local pyproject.toml settings in project (not in nvim-basic-ide)
+            cwd = function(params)
+                return vim.fn.fnamemodify(params.bufname, ":h")
+            end,
+        }),
+        formatting.black.with({
+            extra_args = { "--fast" },
+            -- this is added so it respects local pyproject.toml settings in project (not in nvim-basic-ide)
+            cwd = function(params)
+                return vim.fn.fnamemodify(params.bufname, ":h")
+            end,
+        }),
         formatting.stylua,
         -- diagnostics.flake8,
     },
