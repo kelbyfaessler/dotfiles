@@ -17,8 +17,7 @@ null_ls.setup({
     debug = false,
     sources = {
         formatting.prettier.with({
-            extra_filetypes = { "toml" },
-            extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
+            extra_filetypes = { "svelte", "toml" },
         }),
         formatting.isort.with({
             -- this is added so it respects local pyproject.toml settings in project (not in nvim-basic-ide)
