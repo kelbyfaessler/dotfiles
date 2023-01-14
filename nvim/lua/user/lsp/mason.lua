@@ -10,6 +10,7 @@ local servers = {
     -- added by me:
     "astro",
     "rust_analyzer",
+    "svelte",
 }
 
 local settings = {
