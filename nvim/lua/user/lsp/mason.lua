@@ -1,3 +1,5 @@
+-- These names come from the "lspconfig" column on this page:
+-- https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
 local servers = {
     "sumneko_lua",
     "cssls",
@@ -11,6 +13,7 @@ local servers = {
     "astro",
     "rust_analyzer",
     "svelte",
+    "prismals",
 }
 
 local settings = {
