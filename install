@@ -2,7 +2,7 @@
 
 # vim:
 mkdir -p ~/.config/nvim/lua
-ln -s ~/.dotfiles/nvim/init.vim ~/.config/nvim/init.vim
+ln -s ~/.dotfiles/nvim/init.lua ~/.config/nvim/init.lua
 ln -s ~/.dotfiles/nvim/lua/user ~/.config/nvim/lua/user
 
 # zsh:
