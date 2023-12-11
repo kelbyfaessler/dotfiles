@@ -19,12 +19,12 @@ null_ls.setup({
         formatting.prettier.with({
             extra_filetypes = { "svelte", "toml" },
         }),
-        formatting.isort.with({
-            -- this is added so it respects local pyproject.toml settings in project (not in nvim-basic-ide)
-            cwd = function(params)
-                return vim.fn.fnamemodify(params.bufname, ":h")
-            end,
-        }),
+        -- formatting.isort.with({
+        --     -- this is added so it respects local pyproject.toml settings in project (not in nvim-basic-ide)
+        --     cwd = function(params)
+        --         return vim.fn.fnamemodify(params.bufname, ":h")
+        --     end,
+        -- }),
         formatting.black.with({
             extra_args = { "--fast" },
             -- this is added so it respects local pyproject.toml settings in project (not in nvim-basic-ide)
