@@ -16,8 +16,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     end,
 })
 
--- Kelby note: this line must be commented out otherwise any floaterm that's opened/closed before any other
--- buffers are opened will completely exit neovim
+-- Kelby note: this line must be commented out otherwise any floaterm that's opened buffers are opened will completely exit neovim
+-- Automatically close tab/vim when nvim-tree is the last window in the tab
 -- vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif")
 
 vim.api.nvim_create_autocmd({ "VimResized" }, {
