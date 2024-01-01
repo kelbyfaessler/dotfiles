@@ -15,6 +15,7 @@ Neovim Config:
 - FOR UPDATING NVIM VERSIONS, SEE `nvim-basic-ide`
 - My neovim config used to be based on this repo (https://github.com/LunarVim/Neovim-from-scratch) which also has a corresponding youtube video series (https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ)
 - That neovim config then evolved into this repo (https://github.com/LunarVim/nvim-basic-ide) which is now the basis for my neovim config
+- And that repo is now called launch.nvim (https://github.com/LunarVim/Launch.nvim)
 - Customizations I've made to that:
     - Add hop plugin
     - Add telescope media files plugin
