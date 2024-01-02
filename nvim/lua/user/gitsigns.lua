@@ -1,6 +1,10 @@
-local gitsigns = require("gitsigns")
+local M = {
+    "lewis6991/gitsigns.nvim",
+    commit = "ec4742a7eebf68bec663041d359b95637242b5c3",
+    event = "BufReadPre",
+}
 
-gitsigns.setup({
+M.opts = {
     signs = {
         add = { hl = "GitSignsAdd", text = "▎", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
         change = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
@@ -35,4 +39,6 @@ gitsigns.setup({
         row = 0,
         col = 1,
     },
-})
+}
+
+return M

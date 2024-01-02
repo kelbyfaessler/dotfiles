@@ -1,24 +1,35 @@
-local comment = require("Comment")
+local M = {
+    "numToStr/Comment.nvim",
+    commit = "eab2c83a0207369900e92783f56990808082eac2",
+    event = "BufRead",
+    dependencies = {
+        {
+            "JoosepAlviste/nvim-ts-context-commentstring",
+            event = "VeryLazy",
+            commit = "a0f89563ba36b3bacd62cf967b46beb4c2c29e52",
+        },
+    },
+}
 
-comment.setup({
+function M.config()
     ---Add a space b/w comment and the line
-    padding = true,
+    local padding = true
     ---Whether the cursor should stay at its position
-    sticky = true,
+    local sticky = true
     ---Lines to be ignored while (un)comment
-    ignore = nil,
+    local ignore = nil
 
     ---Enable keybindings
     ---NOTE: If given `false` then the plugin won't create any mappings
-    mappings = {
+    local mappings = {
         ---Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
         basic = false,
         ---Extra mapping; `gco`, `gcO`, `gcA`
         extra = false,
         ---Extended mapping; `g>` `g<` `g>[count]{motion}` `g<[count]{motion}`
         extended = false,
-    },
-    pre_hook = function(ctx)
+    }
+    local pre_hook = function(ctx)
         -- Only calculate commentstring for tsx filetypes
         if vim.bo.filetype == "typescriptreact" then
             local U = require("Comment.utils")
@@ -39,5 +50,7 @@ comment.setup({
                 location = location,
             })
         end
-    end,
-})
+    end
+end
+
+return M

@@ -1,6 +1,16 @@
-local bufferline = require("bufferline")
+local M = {
+    "akinsho/bufferline.nvim",
+    commit = "c7492a76ce8218e3335f027af44930576b561013",
+    event = { "BufReadPre", "BufAdd", "BufNew", "BufReadPost" },
+    dependencies = {
+        {
+            "famiu/bufdelete.nvim",
+            commit = "8933abc09df6c381d47dc271b1ee5d266541448e",
+        },
+    },
+}
 
-bufferline.setup({
+M.opts = {
     options = {
         numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
         close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
@@ -91,4 +101,6 @@ bufferline.setup({
             bg = { attribute = "bg", highlight = "Normal" },
         },
     },
-})
+}
+
+return M
