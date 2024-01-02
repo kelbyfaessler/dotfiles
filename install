@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 # vim:
-mkdir -p ~/.config/nvim/lua
-ln -s ~/.dotfiles/nvim/init.lua ~/.config/nvim/init.lua
-ln -s ~/.dotfiles/nvim/lua/user ~/.config/nvim/lua/user
+ln -s ~/.dotfiles/nvim ~/.config/nvim
 
 # zsh:
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/powerlevel10k
