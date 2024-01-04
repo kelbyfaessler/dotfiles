@@ -1,21 +1,32 @@
 local M = {
     "lukas-reineke/indent-blankline.nvim",
-    commit = "8299fe7703dfff4b1752aeed271c3b95281a952d",
-    event = "BufReadPre",
-}
-
-M.opts = {
-    char = "▏",
-    show_trailing_blankline_indent = false,
-    show_first_indent_level = true,
-    use_treesitter = true,
-    show_current_context = true,
-    buftype_exclude = { "terminal", "nofile" },
-    filetype_exclude = {
+    event = "VeryLazy",
+  }
+  
+  function M.config()
+    local icons = require "user.icons"
+  
+    require("indent_blankline").setup {
+      buftype_exclude = { "terminal", "nofile" },
+      filetype_exclude = {
         "help",
-        "packer",
+        "startify",
+        "dashboard",
+        "lazy",
+        "neogitstatus",
         "NvimTree",
-    },
-}
-
-return M
+        "Trouble",
+        "text",
+      },
+      -- char = icons.ui.LineLeft,
+      char = icons.ui.LineMiddle,
+      -- context_char = icons.ui.LineLeft,
+      context_char = icons.ui.LineMiddle,
+      show_trailing_blankline_indent = false,
+      show_first_indent_level = true,
+      use_treesitter = true,
+      show_current_context = true,
+    }
+  end
+  
+  return M
