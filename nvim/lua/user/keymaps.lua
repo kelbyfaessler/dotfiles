@@ -1,8 +1,5 @@
 local keymap = vim.keymap.set
-
-local opts = {
-    silent = true,
-}
+local opts = { noremap = true, silent = true }
 
 -------------------------------------------------------------------------------
 -- Modes
@@ -15,8 +12,9 @@ local opts = {
 --   operator_mode = "o",
 
 --Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
+keymap("n", "<Space>", "", opts)
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -------------------------------------------------------------------------------
 -- Normal --
@@ -171,3 +169,14 @@ keymap(
 )
 -- The hint_words keymap doesn't seem to work in operator mode with leader key
 -- keymap('v', '<leader>a', "<cmd>lua require'hop'.hint_words({inclusive_jump = true})<cr>", {})
+
+
+
+keymap("x", "p", [["_dP]])
+
+vim.cmd [[:amenu 10.100 mousemenu.Goto\ Definition <cmd>lua vim.lsp.buf.definition()<CR>]]
+vim.cmd [[:amenu 10.110 mousemenu.References <cmd>lua vim.lsp.buf.references()<CR>]]
+-- vim.cmd [[:amenu 10.120 mousemenu.-sep- *]]
+
+vim.keymap.set("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
+vim.keymap.set("n", "<Tab>", "<cmd>:popup mousemenu<CR>")

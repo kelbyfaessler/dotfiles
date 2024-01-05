@@ -8,6 +8,7 @@ vim.opt.hlsearch = true -- highlight all matches on previous search pattern
 vim.opt.ignorecase = true -- ignore case in search patterns
 vim.opt.mouse = "a" -- allow the mouse to be used in neovim
 vim.opt.pumheight = 10 -- pop up menu height
+-- vim.opt.pumblend = 10
 vim.opt.showmode = false -- we don't need to see things like -- INSERT -- anymore
 vim.opt.showtabline = 0 -- always show tabs
 vim.opt.smartcase = true -- smart case
@@ -39,13 +40,16 @@ vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applicati
 vim.opt.title = false
 vim.opt.fillchars = vim.opt.fillchars + "eob: " -- show empty lines at the end of a buffer as ` ` {default `~`}
 vim.opt.fillchars:append {
-    stl = " ",
-  }
+  stl = " ",
+}
+
 vim.opt.shortmess:append("c") -- hide all the completion messages, e.g. "-- XXX completion (YYY)", "match 1 of 2", "The only match", "Pattern not found"
-vim.opt.whichwrap:append("<,>,[,],h,l") -- keys allowed to move to the previous/next line when the beginning/end of line is reached
--- vim.opt.iskeyword:append("-")                   -- treats words with `-` as single words
--- vim.opt.formatoptions:remove({ "c", "r", "o" }) -- This is a sequence of letters which describes how automatic formatting is to be done
-vim.opt.linebreak = true
+
+vim.cmd "set whichwrap+=<,>,[,],h,l" -- keys allowed to move to the previous/next line when the beginning/end of line is reached
+vim.cmd [[set iskeyword+=-]]                   -- treats words with `-` as single words
+
+vim.g.netrw_banner = 0
+vim.g.netrw_mouse = 2
 
 -- Settings not in nvim-basic-ide that I added:
 vim.opt.errorbells = false

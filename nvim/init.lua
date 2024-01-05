@@ -28,10 +28,11 @@ spec("user.alpha")
 -- spec "user.netrw"
 spec("user.project")
 -- spec "user.toggleterm"
+-- spec "user.bufdelete"
 -- Extras
 spec("user.extras.colorizer")
 spec("user.extras.smoothie")
-spec("user.extras.copilot")
+-- spec("user.extras.copilot")
 spec("user.extras.fidget")
 spec("user.extras.modicator")
 -- spec("user.extras.matchup")
