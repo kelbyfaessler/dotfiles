@@ -39,14 +39,14 @@ vim.opt.scrolloff = 8 -- minimal number of screen lines to keep above and below 
 vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
 vim.opt.title = false
 vim.opt.fillchars = vim.opt.fillchars + "eob: " -- show empty lines at the end of a buffer as ` ` {default `~`}
-vim.opt.fillchars:append {
-  stl = " ",
-}
+vim.opt.fillchars:append({
+    stl = " ",
+})
 
 vim.opt.shortmess:append("c") -- hide all the completion messages, e.g. "-- XXX completion (YYY)", "match 1 of 2", "The only match", "Pattern not found"
 
-vim.cmd "set whichwrap+=<,>,[,],h,l" -- keys allowed to move to the previous/next line when the beginning/end of line is reached
-vim.cmd [[set iskeyword+=-]]                   -- treats words with `-` as single words
+vim.cmd("set whichwrap+=<,>,[,],h,l") -- keys allowed to move to the previous/next line when the beginning/end of line is reached
+vim.cmd([[set iskeyword+=-]]) -- treats words with `-` as single words
 
 vim.g.netrw_banner = 0
 vim.g.netrw_mouse = 2
