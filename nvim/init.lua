@@ -12,10 +12,10 @@ spec("user.lspconfig")
 -- spec "user.breadcrumbs"
 spec("user.null-ls")
 spec("user.illuminate")
--- spec("user.telescope")
+spec("user.telescope")
 -- spec("user.telescope-tabs")
 spec("user.nvimtree")
--- spec("user.lualine")
+spec("user.lualine")
 -- spec "user.whichkey"
 spec("user.cmp")
 spec("user.autopairs")
