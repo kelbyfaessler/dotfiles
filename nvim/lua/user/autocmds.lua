@@ -1,6 +1,6 @@
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   callback = function()
-    vim.cmd "set formatoptions-=cro"
+    vim.cmd("set formatoptions-=cro")
   end,
 })
 
@@ -20,35 +20,35 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     "",
   },
   callback = function()
-    vim.cmd [[
+    vim.cmd([[
       nnoremap <silent> <buffer> q :close<CR>
       set nobuflisted
-    ]]
+    ]])
   end,
 })
 
 vim.api.nvim_create_autocmd({ "CmdWinEnter" }, {
   callback = function()
-    vim.cmd "quit"
+    vim.cmd("quit")
   end,
 })
 
 vim.api.nvim_create_autocmd({ "VimResized" }, {
   callback = function()
-    vim.cmd "tabdo wincmd ="
+    vim.cmd("tabdo wincmd =")
   end,
 })
 
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   pattern = { "*" },
   callback = function()
-    vim.cmd "checktime"
+    vim.cmd("checktime")
   end,
 })
 
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   callback = function()
-    vim.highlight.on_yank { higroup = "Visual", timeout = 200 }
+    vim.highlight.on_yank({ higroup = "Visual", timeout = 200 })
   end,
 })
 
@@ -63,19 +63,38 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 -------------------------------------------------------------------------------
 -- autocommands not in nvim-basic-ide / launch.nvim that I added:
 vim.api.nvim_create_autocmd({ "FileType" }, {
-    pattern = { "python", "astro" },
-    callback = function()
-        vim.opt_local.shiftwidth = 4
-        vim.opt_local.softtabstop = 4
-        vim.opt_local.expandtab = true
-    end,
+  pattern = { "python", "astro" },
+  callback = function()
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.softtabstop = 4
+    vim.opt_local.expandtab = true
+  end,
 })
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
-    pattern = { "javascript", "typescript", "vue", "html", "javascriptreact", "svelte" },
-    callback = function()
-        vim.opt_local.shiftwidth = 2
-        vim.opt_local.softtabstop = 2
-        vim.opt_local.expandtab = true
-    end,
+  pattern = { "javascript", "typescript", "vue", "html", "javascriptreact", "svelte" },
+  callback = function()
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.softtabstop = 2
+    vim.opt_local.expandtab = true
+  end,
+})
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function(data)
+    -- buffer is a [No Name]
+    local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
+    -- buffer is a directory
+    local directory = vim.fn.isdirectory(data.file) == 1
+    if not no_name and not directory then
+      return
+    end
+
+    -- change to the directory
+    if directory then
+      vim.cmd.cd(data.file)
+    end
+    -- open the tree
+    require("nvim-tree.api").tree.open()
+  end,
 })

@@ -40,7 +40,7 @@ vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applicati
 vim.opt.title = false
 vim.opt.fillchars = vim.opt.fillchars + "eob: " -- show empty lines at the end of a buffer as ` ` {default `~`}
 vim.opt.fillchars:append({
-    stl = " ",
+  stl = " ",
 })
 
 vim.opt.shortmess:append("c") -- hide all the completion messages, e.g. "-- XXX completion (YYY)", "match 1 of 2", "The only match", "Pattern not found"
@@ -55,3 +55,7 @@ vim.g.netrw_mouse = 2
 vim.opt.errorbells = false
 vim.g.floaterm_width = 0.95
 vim.g.floaterm_height = 0.95
+
+-- disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
