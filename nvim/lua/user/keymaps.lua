@@ -85,9 +85,9 @@ keymap("n", "<C-_>", "<Plug>(comment_toggle_linewise_current)", opts)
 keymap("n", "<leader>/", "<Plug>(comment_toggle_linewise_current)", opts)
 
 -- Git
--- keymap("n", "<leader>gi", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
--- keymap("n", "<leader>gi", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true, silent = true})
-keymap("n", "<leader>i", "<cmd>FloatermNew lazygit<CR>", { noremap = true, silent = true })
+-- keymap("n", "<leader>i", "<cmd>FloatermNew lazygit<CR>", opts)
+-- keymap("n", "<leader>i", "<cmd>9ToggleTerm<CR>", opts)
+keymap("n", "<leader>i", "<cmd>lua _lazygit_toggle()<CR>", opts)
 
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)

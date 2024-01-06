@@ -36,19 +36,19 @@ function M.config()
 
   local exec_toggle = function(opts)
     local Terminal = require("toggleterm.terminal").Terminal
-    local term = Terminal:new { cmd = opts.cmd, count = opts.count, direction = opts.direction }
+    local term = Terminal:new({ cmd = opts.cmd, count = opts.count, direction = opts.direction })
     term:toggle(opts.size, opts.direction)
   end
 
   local add_exec = function(opts)
-    local binary = opts.cmd:match "(%S+)"
+    local binary = opts.cmd:match("(%S+)")
     if vim.fn.executable(binary) ~= 1 then
       vim.notify("Skipping configuring executable " .. binary .. ". Please make sure it is installed properly.")
       return
     end
 
     vim.keymap.set({ "n", "t" }, opts.keymap, function()
-      exec_toggle { cmd = opts.cmd, count = opts.count, direction = opts.direction, size = opts.size() }
+      exec_toggle({ cmd = opts.cmd, count = opts.count, direction = opts.direction, size = opts.size() })
     end, { desc = opts.label, noremap = true, silent = true })
   end
 
@@ -69,7 +69,7 @@ function M.config()
     add_exec(opts)
   end
 
-  require("toggleterm").setup {
+  require("toggleterm").setup({
     size = 20,
     open_mapping = [[<c-\>]],
     hide_numbers = true, -- hide the number column in toggleterm buffers
@@ -96,18 +96,18 @@ function M.config()
         return term.count
       end,
     },
-  }
-  vim.cmd [[
+  })
+  vim.cmd([[
   augroup terminal_setup | au!
   autocmd TermOpen * nnoremap <buffer><LeftRelease> <LeftRelease>i
   autocmd TermEnter * startinsert!
   augroup end
-  ]]
+  ]])
 
   vim.api.nvim_create_autocmd({ "TermEnter" }, {
     pattern = { "*" },
     callback = function()
-      vim.cmd "startinsert"
+      vim.cmd("startinsert")
     end,
   })
 
@@ -117,6 +117,30 @@ function M.config()
     vim.api.nvim_buf_set_keymap(0, "t", "<m-j>", [[<C-\><C-n><C-W>j]], opts)
     vim.api.nvim_buf_set_keymap(0, "t", "<m-k>", [[<C-\><C-n><C-W>k]], opts)
     vim.api.nvim_buf_set_keymap(0, "t", "<m-l>", [[<C-\><C-n><C-W>l]], opts)
+  end
+
+  local Terminal = require("toggleterm.terminal").Terminal
+  local lazygit = Terminal:new({
+    cmd = "lazygit",
+    dir = "git_dir",
+    direction = "float",
+    float_opts = {
+      border = "double",
+    },
+    count = 9,
+    -- function to run on opening the terminal
+    on_open = function(term)
+      vim.cmd("startinsert!")
+      vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+    end,
+    -- function to run on closing the terminal
+    on_close = function(term)
+      vim.cmd("startinsert!")
+    end,
+  })
+
+  function _lazygit_toggle()
+    lazygit:toggle()
   end
 end
 
