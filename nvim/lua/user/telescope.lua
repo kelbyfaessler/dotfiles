@@ -7,10 +7,10 @@ local M = {
 }
 
 function M.config()
-  local icons = require "user.icons"
-  local actions = require "telescope.actions"
+  local icons = require("user.icons")
+  local actions = require("telescope.actions")
 
-  require("telescope").setup {
+  require("telescope").setup({
     defaults = {
       prompt_prefix = icons.ui.Telescope .. " ",
       selection_caret = icons.ui.Forward .. " ",
@@ -20,9 +20,25 @@ function M.config()
       path_display = { "smart" },
       color_devicons = true,
       set_env = { ["COLORTERM"] = "truecolor" },
-      sorting_strategy = nil,
-      layout_strategy = nil,
-      layout_config = {},
+      sorting_strategy = "ascending",
+      layout_strategy = "center",
+      -- layout_strategy = "horizontal",
+      layout_config = {
+        -- width = 0.60,
+        -- height = 0.90,
+        horizontal = {
+          prompt_position = "top",
+          -- height = 0.8,
+          -- width = 0.6,
+          -- sorting_strategy = "ascending",
+        },
+        center = {
+          prompt_position = "top",
+          height = 0.6,
+          -- width = 0.6,
+          -- preview_width = 0.9,
+        },
+      },
       vimgrep_arguments = {
         "rg",
         "--color=never",
@@ -98,21 +114,21 @@ function M.config()
     },
     pickers = {
       live_grep = {
-        theme = "dropdown",
+        -- theme = "dropdown",
       },
 
       grep_string = {
-        theme = "dropdown",
+        -- theme = "dropdown",
       },
 
       find_files = {
-        theme = "dropdown",
+        -- theme = "dropdown",
         previewer = false,
       },
 
       buffers = {
-        theme = "dropdown",
-        previewer = false,
+        -- theme = "dropdown",
+        -- previewer = false,
         initial_mode = "normal",
         mappings = {
           i = {
@@ -161,7 +177,7 @@ function M.config()
         case_mode = "smart_case", -- or "ignore_case" or "respect_case"
       },
     },
-  }
+  })
 end
 
 return M
