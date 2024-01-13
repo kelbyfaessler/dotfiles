@@ -18,7 +18,9 @@ local M = {
 function M.config()
   -- vim.cmd.colorscheme "darkplus"
   -- vim.cmd.colorscheme "tokyonight-night"
-  vim.cmd.colorscheme "primer_dark"
+  vim.cmd.colorscheme("primer_dark")
+  -- override primer_dark cursorline color to be lighter and more noticable
+  vim.api.nvim_set_hl(0, "CursorLine", { fg = "NONE", bg = "#2f343d" })
 end
 
 return M
