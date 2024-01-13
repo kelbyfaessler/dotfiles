@@ -49,8 +49,19 @@ curl -fLo "MesloLGS NF Bold Italic.ttf" https://github.com/romkatv/powerlevel10k
 cd -
 
 # install neovim
-sudo dnf install -y neovim python3-neovim
-npm install -g neovim
+# sudo dnf install -y neovim python3-neovim
+# npm install -g neovim
+# install neovim from source so it doesnt get auto-upgraded by dnf (breaking my config)
+mkdir -p ~/sandbox
+cd ~/sandbox
+git clone https://github.com/neovim/neovim.git 
+# install prereqs before building
+sudo dnf -y install ninja-build cmake gcc make unzip gettext curl
+# checkout neovim 0.9.5 (commit I know works with my config)
+git checkout 8744ee8
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
+cd -
 # set git editor to neovim
 git config --global core.editor "nvim"
 
