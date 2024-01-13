@@ -47,3 +47,11 @@ spec("user.extras.eyeliner") -- hop replacement but simpler
 spec("user.bufferline")
 -----------------------------------------------------
 require("user.lazy")
+
+-- Plugins I dont want (from launch.nvim)
+-- navic
+-- breadcrumbs
+-- netrw
+-- whichkey
+-- neogit
+-- diffview
