@@ -30,17 +30,17 @@ spec("user.project")
 spec("user.toggleterm")
 -- spec "user.bufdelete"
 -- Extras
-spec("user.extras.colorizer")
-spec("user.extras.smoothie")
+spec("user.extras.colorizer") -- hex color previews
+spec("user.extras.smoothie") -- smooth scrolling
 -- spec("user.extras.copilot")
-spec("user.extras.fidget")
-spec("user.extras.modicator")
+spec("user.extras.fidget") -- LSP status bot right
+spec("user.extras.modicator") -- changes lualine colors by nvim mode
 -- spec("user.extras.matchup")
-spec("user.extras.bqf")
+spec("user.extras.bqf") -- better quick fix
 -- spec("user.extras.dial")
 -- spec("user.extras.dressing")
-spec("user.extras.surround")
-spec("user.extras.eyeliner")
+-- spec("user.extras.surround") -- hotkeys for adding, changing, deleting around text
+spec("user.extras.eyeliner") -- hop replacement but simpler
 -----------------------------------------------------
 -- added by me on top of nvim-basic-ide / launch.nvim
 -- spec("user.hop")
