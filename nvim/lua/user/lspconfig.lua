@@ -45,8 +45,8 @@ function M.common_capabilities()
 end
 
 function M.config()
-  local lspconfig = require "lspconfig"
-  local icons = require "user.icons"
+  local lspconfig = require("lspconfig")
+  local icons = require("user.icons")
 
   local servers = {
     "lua_ls",
@@ -112,7 +112,7 @@ function M.config()
     end
 
     if server == "lua_ls" then
-      require("neodev").setup {}
+      require("neodev").setup({})
     end
 
     lspconfig[server].setup(opts)

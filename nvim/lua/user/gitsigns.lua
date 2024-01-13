@@ -5,9 +5,9 @@ local M = {
   cmd = "Gitsigns",
 }
 M.config = function()
-  local icons = require "user.icons"
+  local icons = require("user.icons")
 
-  require("gitsigns").setup {
+  require("gitsigns").setup({
     signs = {
       add = {
         hl = "GitSignsAdd",
@@ -55,7 +55,7 @@ M.config = function()
       row = 0,
       col = 1,
     },
-  }
+  })
 end
 
 return M
