@@ -13,6 +13,9 @@ function M.config()
       null_ls.builtins.diagnostics.eslint,
       null_ls.builtins.completion.spell,
       -- my customizations not in nvim-basic-ide/launch.nvim:
+      null_ls.builtins.formatting.prettier.with({
+        extra_filetypes = { "svelte", "toml" },
+      }),
       null_ls.builtins.formatting.black.with({
         extra_args = { "--fast" },
         -- this is added so it respects local pyproject.toml settings in project (not in nvim-basic-ide/launch.nvim)
