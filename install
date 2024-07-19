@@ -26,3 +26,4 @@ ln -s ~/.dotfiles/lazygit/config.yml ~/.config/lazygit/config.yml
 
 # git options
 git config --global --add --bool push.autoSetupRemote true
+git config --global alias.undo 'reset --soft HEAD^'
