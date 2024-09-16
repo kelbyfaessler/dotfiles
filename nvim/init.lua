@@ -45,6 +45,7 @@ spec("user.extras.eyeliner") -- hop replacement but simpler
 -- added by me on top of nvim-basic-ide / launch.nvim
 -- spec("user.hop")
 spec("user.bufferline")
+spec("user.edgedb")
 -----------------------------------------------------
 require("user.lazy")
 
