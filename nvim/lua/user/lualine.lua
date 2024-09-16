@@ -66,6 +66,7 @@ function M.config()
       -- section_separators = { left = "", right = "" },
 
       ignore_focus = { "NvimTree" },
+      disabled_filetypes = { "alpha", "dashboard", "NVimTree" },
     },
     sections = {
       -- lualine_a = { {"branch", icon =""} },
