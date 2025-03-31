@@ -46,6 +46,7 @@ spec("user.extras.eyeliner") -- hop replacement but simpler
 -- spec("user.hop")
 spec("user.bufferline")
 spec("user.edgedb")
+spec("user.conform")
 -----------------------------------------------------
 require("user.lazy")
 
