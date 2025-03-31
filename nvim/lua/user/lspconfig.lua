@@ -57,7 +57,7 @@ function M.config()
     "pyright",
     "bashls",
     "jsonls",
-    "yamlls",
+    -- "yamlls",
     "marksman",
     "tailwindcss",
     -- added by me:
