@@ -1,11 +1,12 @@
 local M = {
   "mawkler/modicator.nvim",
+  commit = "45b64561e109cd04de551b081fb947b4f856009e",
   event = "BufEnter",
 }
 
 function M.config()
   require("modicator").setup({
-    show_warnings = true,
+    show_warnings = false,
     highlights = {
       defaults = {
         bold = true,
