@@ -31,7 +31,8 @@ Neovim Config:
     - treesitter customization in kickstart.nvim
     - try some custom start page themes from https://github.com/goolord/alpha-nvim/discussions/16
 
-Poetry setup on linux:
+POETRY NOW DEPRECATED
+~~Poetry setup on linux:
 - Have installed poetry previously using they're official install script via curl. Pipx is an alternative to try and see if it handles pyenv better.
 - I like to configure poetry to install dependencies in a venv in each project locally. To configure this:
     - `ll ~/.config/pypoetry` this probably won't exist initially
@@ -51,13 +52,14 @@ Reasons I picked `fnm` for node version manager:
 - Potential replacement for `fnm` in future: `pnpm`
 
 Additional Fedora manual setup:
+NOTE: THESE WERE MIGRATED TO INSTALL SCRIPT AND AREN'T MANUAL ANYMORE
 - Go into display settings and turn on night light for blue light filter
 - The fedora install script sets up imwheel for faster mouse scrolling. That was based on this link: http://www.webupd8.org/2015/12/how-to-change-mouse-scroll-wheel-speed.html
 - Settings->Multitasking->Hot Corner->disable
 - Settings->Keyboard->Keyboard Shortcuts->Switch Windows->Alt + Tab
 - Settings->Keyboard->View and Customize Shortcuts->Switch Applications->Super + Tab
 - To install postman: Software App->Postman (install flatpak version, which is easiest/most native of postman's offered installation methods)
-- To enable fractional scaling: `gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']`
+- To enable fractional scaling: `gsettings set org.gnome.mutter experimental-features ['scale-monitor-framebuffer']`
 - To enable tap-to-click on touchpad: `gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true`
 - For intel 12th gen CPU, to remove conflict with ambient light sensor and enable backlight brightness buttons: `sudo grubby --update-kernel=ALL --args="module_blacklist=hid_sensor_hub"`
 

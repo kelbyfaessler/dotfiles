@@ -126,3 +126,27 @@ cd -
 # make alacritty default terminal emulator
 # gsettings set org.gnome.desktop.default-applications.terminal exec /usr/local/bin/alacritty 
 # gsettings set org.gnome.desktop.default-applications.terminal exec-arg "--working-directory"
+
+# to list all apps available via flatpak in fedora by default:
+# flatpak remote-ls --app $REMOTE
+# https://fedoramagazine.org/comparison-of-fedora-flatpaks-and-flathub-remotes/
+
+# install screenshot app via cmd line instead of software app:
+flatpak install -y org.gnome.Screenshot
+# install meld diff app via cmd line instead of software app:
+flatpak install -y org.gnome.Meld
+# install postman
+flatpak install -y com.getpostman.Postman
+
+# set desired fedora settings here instead of via gnome settings app
+gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
+gsettings set org.gnome.desktop.interface enable-hot-corners false
+gsettings set org.gnome.desktop.wm.keybindings switch-applications ['<Super>Tab']
+gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward ['<Shift><Super>Tab']
+gsettings set org.gnome.desktop.wm.keybindings switch-windows ['<Alt>Tab']
+gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward ['<Shift><Alt>Tab']
+gsettings set org.gnome.mutter experimental-features ['scale-monitor-framebuffer']
+# To enable tap-to-click on touchpad
+gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+# For intel 12th gen CPU, to remove conflict with ambient light sensor and enable backlight brightness buttons
+sudo grubby --update-kernel=ALL --args="module_blacklist=hid_sensor_hub"
