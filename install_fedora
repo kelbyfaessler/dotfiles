@@ -5,21 +5,21 @@ sudo sh -c 'echo "fastestmirror=True" >>/etc/dnf/dnf.conf'
 sudo sh -c 'echo "max_parallel_downloads=10" >>/etc/dnf/dnf.conf'
 sudo sh -c 'echo "defaultyes=True" >>/etc/dnf/dnf.conf'
 
-sudo dnf upgrade --refresh
+sudo dnf -y upgrade --refresh
 
 # install zsh
 if ! zsh --version; then
-    sudo dnf install zsh
+    sudo dnf -y install zsh
 fi
-sudo dnf install util-linux-user
+sudo dnf install -y util-linux-user
 chsh -s $(which zsh)
 echo SHELL: $SHELL
 
 # install g++ (needed for treesitter compilations)
-sudo dnf install gcc-c++
+sudo dnf -y install gcc-c++
 
 # install rust and cargo
-sudo dnf install rust cargo
+sudo dnf -y install rust cargo
 # add cargo to PATH to be able to run locally compiled binaries
 echo 'export PATH='$HOME/.cargo/bin':$PATH' >>~/.zshrc_local
 
@@ -68,12 +68,12 @@ git config --global core.editor "nvim"
 # install telescop dependencies
 #   (ripgrep needed by telescope live_grep)
 #   (fd needed by telescope file search)
-sudo dnf install ripgrep
-sudo dnf install fd-find
+sudo dnf -y install ripgrep
+sudo dnf -y install fd-find
 
 # install lazygit (via cool other package repo, for now)
-sudo dnf copr enable atim/lazygit -y
-sudo dnf install lazygit
+sudo dnf -y copr enable atim/lazygit -y
+sudo dnf -y install lazygit
 
 # install imwheel configuration (for faster mouse scrolling)
 ln -s ~/.dotfiles/misc/.imwheelrc ~/.imwheelrc
@@ -83,27 +83,27 @@ ln -s ~/.dotfiles/misc/imwheel.desktop ~/.config/autostart/imwheel.desktop
 # install vscode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-sudo dnf install code
+sudo dnf -y install code
 
-sudo dnf install tree
+sudo dnf -y install tree
 
 # install dependencies for pyenv to build python
-sudo dnf install make
-sudo dnf install gcc
-sudo dnf install zlib-devel
-sudo dnf install bzip2
-sudo dnf install bzip2-devel
-sudo dnf install readline-devel
-sudo dnf install sqlite
-sudo dnf install sqlite-devel
-sudo dnf install openssl-devel
-sudo dnf install tk-devel
-sudo dnf install libffi-devel
-sudo dnf install xz-devel
+sudo dnf -y install make
+sudo dnf -y install gcc
+sudo dnf -y install zlib-devel
+sudo dnf -y install bzip2
+sudo dnf -y install bzip2-devel
+sudo dnf -y install readline-devel
+sudo dnf -y install sqlite
+sudo dnf -y install sqlite-devel
+sudo dnf -y install openssl-devel
+sudo dnf -y install tk-devel
+sudo dnf -y install libffi-devel
+sudo dnf -y install xz-devel
 
 # install dependencies that might be needed by poetry to compile/install project dependencies
-sudo dnf install python3-devel
-sudo dnf install postgresql-devel
+sudo dnf -y install python3-devel
+sudo dnf -y install postgresql-devel
 
 # stylua formatter for lua code (e.g. neovim config)
 cargo install stylua
@@ -113,7 +113,7 @@ mkdir -p ~/sandbox
 cd ~/sandbox
 git clone https://github.com/alacritty/alacritty.git
 cd alacritty
-sudo dnf install cmake freetype-devel fontconfig-devel libxcb-devel libxkbcommon-devel g++
+sudo dnf -y install cmake freetype-devel fontconfig-devel libxcb-devel libxkbcommon-devel g++
 # Force support for only Wayland
 cargo build --release --no-default-features --features=wayland
 # desktop entry
