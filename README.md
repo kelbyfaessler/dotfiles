@@ -51,6 +51,12 @@ Reasons I picked `fnm` for node version manager:
 - `volta` seems to try to do more than simply node version and is more complicated than fnm
 - Potential replacement for `fnm` in future: `pnpm`
 
+To find gsettings name for any setting in the settings GUI:
+- gsettings list-recursively > /tmp/gsettings.before
+- change setting in GUI
+- gsettings list-recursively > /tmp/gsettings.after
+- diff: diff /tmp/gsettings.before /tmp/gsettings.after
+
 Additional Fedora manual setup:
 NOTE: THESE WERE MIGRATED TO INSTALL SCRIPT AND AREN'T MANUAL ANYMORE
 - Go into display settings and turn on night light for blue light filter
