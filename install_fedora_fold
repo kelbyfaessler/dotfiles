@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# install uv and ruff for python dev
+curl -LsSf https://astral.sh/uv/install.sh | sh
+uv tool install ruff@latest
