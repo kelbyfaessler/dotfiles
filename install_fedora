@@ -105,6 +105,9 @@ sudo dnf -y install xz-devel
 sudo dnf -y install python3-devel
 sudo dnf -y install postgresql-devel
 
+# wayland clipboard util for neovim
+sudo dnf -y install wl-clipboard
+
 # stylua formatter for lua code (e.g. neovim config)
 cargo install stylua
 
