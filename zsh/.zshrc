@@ -47,3 +47,22 @@ source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Source Zsh-sytax-highlighting must be last thing in zshrc file
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Function to clean up local git branches that have no corresponding remote branch
+git_delete_local_branches() {
+  # Fetch the latest updates from the remote
+  git fetch --prune
+
+  # List local branches and filter based on their presence in remotes
+  for branch in $(git branch --format='%(refname:short)'); do
+    # Check if the branch exists on the remote
+    if [ "$branch" != "main" ] && [ "$branch" != "master" ]; then
+      if ! git show-ref --verify --quiet refs/remotes/origin/"$branch"; then
+        # If not, it means the branch was deleted in the remote, so we delete locally
+        echo "Deleting local branch: $branch"
+        git branch -d "$branch"
+      fi
+    fi
+  done
+}
+alias delete-branches='git_delete_local_branches'
