@@ -11,7 +11,7 @@ function M.config()
     sources = {
       null_ls.builtins.formatting.stylua,
       null_ls.builtins.diagnostics.eslint,
-      null_ls.builtins.completion.spell,
+      -- null_ls.builtins.completion.spell,
       -- my customizations not in nvim-basic-ide/launch.nvim:
       null_ls.builtins.formatting.prettier.with({
         extra_filetypes = { "svelte", "toml" },
