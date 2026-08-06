@@ -183,7 +183,7 @@ function M.config()
       -- { name = "buffer" },
       { name = "path" },
       { name = "calc" },
-      { name = "emoji" },
+      -- { name = "emoji" },
       { name = "treesitter" },
       { name = "crates" },
       { name = "tmux" },
