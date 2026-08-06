@@ -66,3 +66,6 @@ git_delete_local_branches() {
   done
 }
 alias delete-branches='git_delete_local_branches'
+
+# opencode
+export PATH="$HOME/.opencode/bin:$PATH"
