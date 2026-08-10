@@ -153,3 +153,6 @@ gsettings set org.gnome.mutter experimental-features ['scale-monitor-framebuffer
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 # For intel 12th gen CPU, to remove conflict with ambient light sensor and enable backlight brightness buttons
 sudo grubby --update-kernel=ALL --args="module_blacklist=hid_sensor_hub"
+
+# gnome terminal middle mouse button pasting (now off by default)
+gsettings set org.gnome.desktop.interface gtk-enable-primary-paste true
