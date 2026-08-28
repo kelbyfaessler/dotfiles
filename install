@@ -27,3 +27,20 @@ ln -s ~/.dotfiles/lazygit/config.yml ~/.config/lazygit/config.yml
 # git options
 git config --global --add --bool push.autoSetupRemote true
 git config --global alias.undo 'reset --soft HEAD^'
+
+# OpenCode skills
+mkdir -p "$HOME/.config/opencode/skills"
+for source in "$HOME/.dotfiles/opencode/skills"/*; do
+  [ -d "$source" ] || continue
+  name=${source##*/}
+  target="$HOME/.config/opencode/skills/$name"
+
+  if [ -L "$target" ]; then
+    ln -sfn "$source" "$target"
+  elif [ -e "$target" ]; then
+    printf 'Error: refusing to overwrite existing local OpenCode skill: %s\n' "$target" >&2
+    exit 1
+  else
+    ln -s "$source" "$target"
+  fi
+done
