@@ -1,9 +1,9 @@
 ---
-name: unslop
+name: deslop-writing
 description: Cut AI tells from any writing. Must always apply.
 ---
 
-# Unslop
+# Deslop writing
 
 Edit text to remove AI patterns and add human voice.
 
