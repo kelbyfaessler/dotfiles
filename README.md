@@ -11,6 +11,34 @@ Then, install other software with platform-specific install scripts e.g.
 - fedora: `./install_fedora`
 - debian/ubuntu: `./install_debian`
 
+## Install OpenCode skills
+
+Run `./install` to install the universal skills from `opencode/skills/`. To install
+just those skills, run:
+
+```bash
+./opencode/install-skills
+```
+
+To enable the company-specific CFC skills on a machine, run:
+
+```bash
+./opencode/install-skills cfc
+```
+
+The CFC skills live in `opencode/optional-skills/cfc/`. The default installation
+does not install optional groups. To add another optional group, put its skill
+directories under `opencode/optional-skills/<group>/` and pass that group name to
+`install-skills`.
+
+Both commands create symlinks in `~/.config/opencode/skills/`, so edits through
+that directory update the files in dotfiles. You can rerun the commands to refresh
+symlinks. The installer refuses to overwrite existing local files or directories.
+
+Quit and restart OpenCode after installing skills to load them.
+
+## Other configuration notes
+
 Neovim Config:
 - FOR UPDATING NVIM VERSIONS, SEE `nvim-basic-ide`
 - My neovim config used to be based on this repo (https://github.com/LunarVim/Neovim-from-scratch) which also has a corresponding youtube video series (https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ)
