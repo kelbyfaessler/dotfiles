@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# Symlink OpenCode configuration and generic skills into ~/.config/opencode.
+# Safe to rerun. Fold-specific skills and the global AGENTS.md are installed
+# separately by the private cardforcoin-local repository.
+set -euo pipefail
+
+opencode_dir=$(dirname "$(realpath "${BASH_SOURCE[0]}")")
+target_dir="$HOME/.config/opencode"
+
+link() {
+  local source=$1 target=$2
+  if [ -L "$target" ]; then
+    ln -sfn "$source" "$target"
+  elif [ -e "$target" ]; then
+    printf 'Error: refusing to overwrite existing file: %s\n' "$target" >&2
+    exit 1
+  else
+    ln -s "$source" "$target"
+  fi
+}
+
+mkdir -p "$target_dir/skills"
+
+for name in opencode.json package.json bun.lock; do
+  link "$opencode_dir/$name" "$target_dir/$name"
+done
+
+for source in "$opencode_dir"/skills/*/; do
+  source=${source%/}
+  link "$source" "$target_dir/skills/${source##*/}"
+done
+
+# Plugin dependencies declared in package.json. OpenCode installs them itself
+# on startup when bun is available; this makes a fresh machine ready beforehand.
+if command -v bun >/dev/null 2>&1; then
+  (cd "$target_dir" && bun install --frozen-lockfile)
+else
+  printf 'Note: bun not found; OpenCode will install plugin dependencies on first start.\n' >&2
+fi

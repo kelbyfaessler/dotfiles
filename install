@@ -29,4 +29,4 @@ git config --global --add --bool push.autoSetupRemote true
 git config --global alias.undo 'reset --soft HEAD^'
 
 # OpenCode skills
-"$HOME/.dotfiles/opencode/install-skills"
+"$HOME/.dotfiles/opencode/install"
