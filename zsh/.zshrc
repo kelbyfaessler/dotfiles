@@ -66,12 +66,7 @@ git_delete_local_branches() {
 }
 alias delete-branches='git_delete_local_branches'
 
-# User-installed tools: uv, uvx, cfc-local, pre-commit, ruff. Ubuntu adds this
-# only through ~/.profile, which zsh does not read.
-export PATH="$HOME/.local/bin:$PATH"
-
-# opencode
-export PATH="$HOME/.opencode/bin:$PATH"
+# PATH additions live in .zshenv so non-interactive shells get them too.
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
