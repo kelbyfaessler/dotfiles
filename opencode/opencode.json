@@ -7,7 +7,7 @@
         "sardine_submit_feedback": "ask"
     },
     "plugin": [
-        "opencode-claude-auth@2.2.0",
+        "opencode-claude-auth@2.2.1",
         "@datadog/opencode-plugin"
     ],
     "lsp": {
