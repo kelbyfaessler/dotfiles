@@ -4,7 +4,18 @@
         "edit": "allow",
         "bash": "allow",
         "webfetch": "allow",
-        "sardine_submit_feedback": "ask"
+        "sardine_submit_feedback": "ask",
+        // Paths outside the session's checkout that the cardforcoin workflow always
+        // touches: the cfc-local harness and its generated state, the primary checkout
+        // and ticket worktrees (from each other's sessions), and installed skills.
+        // Everything else outside the working directory still asks.
+        "external_directory": {
+            "~/.config/cardforcoin-local/**": "allow",
+            "~/.local/share/cardforcoin-local/**": "allow",
+            "~/work/cardforcoin/**": "allow",
+            "~/work/cardforcoin-worktrees/**": "allow",
+            "~/.config/opencode/skills/**": "allow"
+        }
     },
     "plugin": [
         "opencode-claude-auth@2.2.1",
